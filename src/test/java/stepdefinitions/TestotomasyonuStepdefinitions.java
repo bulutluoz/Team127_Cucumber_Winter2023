@@ -3,6 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.TestOtomasyonuPage;
@@ -106,5 +107,15 @@ public class TestotomasyonuStepdefinitions {
     @And("sisteme giris yapamadigini test eder")
     public void sistemeGirisYapamadiginiTestEder() {
         Assert.assertTrue(testOtomasyonuPage.emailKutusu.isDisplayed());
+    }
+
+    @When("email olarak listede verilen {string} girer")
+    public void emailOlarakListedeVerilenGirer(String verilenEmail) {
+        testOtomasyonuPage.emailKutusu.sendKeys(verilenEmail);
+    }
+
+    @And("password olarak listede verilen {string} girer")
+    public void passwordOlarakListedeVerilenGirer(String verilenPassword) {
+        testOtomasyonuPage.passwordKutusu.sendKeys(verilenPassword);
     }
 }
