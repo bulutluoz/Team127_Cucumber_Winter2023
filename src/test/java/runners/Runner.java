@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
     features = "src/test/resources/features", // calisacak Feature/Scenario'lar nerede ?
     glue = "stepdefinitions" ,    // calisacak Feature/Scenario'larin kodlari nerede?
     tags = "@wip",  // hangi Feature/Scenario'lar calisacak ?
-    dryRun = true // true yapilirsa testi calistirmadan eksik adimlari verir
+    dryRun = false // true yapilirsa testi calistirmadan eksik adimlari verir
                     // testleri calistirirken dryRun = false olmalidir
 )
 
