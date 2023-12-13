@@ -1,6 +1,6 @@
 Feature: US1007 Kullanicinin alisveris sepetine ekledigi urun testi
 
-  @wip
+
   Scenario:TC13 sepete dogru urun eklenmeli
 
     Given kullanici "sauceUrl" anasayfaya gider
