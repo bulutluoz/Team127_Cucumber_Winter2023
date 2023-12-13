@@ -17,6 +17,8 @@ import utilities.Driver;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestotomasyonuStepdefinitions {
     TestOtomasyonuPage testOtomasyonuPage = new TestOtomasyonuPage();
@@ -176,6 +178,55 @@ public class TestotomasyonuStepdefinitions {
 
         Assert.assertTrue(actualStokMiktari >= minStokMiktari);
 
+
+    }
+
+    @Then("stok excelindeki tum urunleri artip, min stok miktarinda urun olanlari listeler")
+    public void stokExcelindekiTumUrunleriArtipMinStokMiktarindaUrunOlanlariListeler() {
+
+        String dosyaYolu = "src/test/resources/stok.xlsx";
+        Workbook workbook;
+        try {
+            FileInputStream fileInputStream = new FileInputStream(dosyaYolu);
+            workbook = new XSSFWorkbook(fileInputStream) ;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        sayfa2 = workbook.getSheet("Sayfa2");
+
+        int stokExceliSonSatirNo = sayfa2.getLastRowNum();
+
+        String satirdakiUrunIsmi;
+        int satirdakiUrunMinStok;
+        int arananUrunUygulamadaBulunanSonucSayisi;
+        List<String> yeterliStokOlanlarListesi = new ArrayList<>();
+        List<String> yeterliStokOlmayanlarListesi = new ArrayList<>();
+
+        for (int i = 1; i <=stokExceliSonSatirNo ; i++) {
+
+            satirdakiUrunIsmi = sayfa2
+                                    .getRow(i)
+                                    .getCell(0)
+                                    .toString();
+
+            satirdakiUrunMinStok = (int)Double.parseDouble(sayfa2
+                                                        .getRow(i)
+                                                        .getCell(1)
+                                                        .toString());
+
+            testOtomasyonuPage.aramaKutusu.sendKeys(satirdakiUrunIsmi+ Keys.ENTER);
+            arananUrunUygulamadaBulunanSonucSayisi = testOtomasyonuPage.bulunanUrunElementleriList.size();
+
+            if (arananUrunUygulamadaBulunanSonucSayisi>=satirdakiUrunMinStok){
+                yeterliStokOlanlarListesi.add(satirdakiUrunIsmi);
+            }else{
+                yeterliStokOlmayanlarListesi.add(satirdakiUrunIsmi);
+            }
+
+        }
+
+        System.out.println("Yeterli stok olan urunler : " + yeterliStokOlanlarListesi);
+        System.out.println("Yeterli stok OLMAYAN urunler : " + yeterliStokOlmayanlarListesi);
 
     }
 }
