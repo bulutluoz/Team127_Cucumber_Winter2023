@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="13.138" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="US1014 Scenario failed oldugunda fotograf cekilmeli" name="TC20 kullanici testotomasyonu sayfasinda Nutella bulabilmeli" time="13.057">
+<system-out><![CDATA[
+Given kullanici "toUrl" anasayfaya gider....................................passed
+Then arama kutusuna "nutella" yazip ENTER tusuna basar......................passed
+And arama sonucunda urun bulunamadigini test eder...........................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
