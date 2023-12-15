@@ -1,6 +1,6 @@
 Feature: US1004 Kullanici gecerli bilgilerle sisteme giris yapar
 
-
+  @P1
   Scenario: TC08 Gecerli bilgilerle sisteme giris yapilabilmeli
 
     Given kullanici "toUrl" anasayfaya gider

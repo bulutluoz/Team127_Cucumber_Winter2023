@@ -1,11 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="13.138" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="US1014 Scenario failed oldugunda fotograf cekilmeli" name="TC20 kullanici testotomasyonu sayfasinda Nutella bulabilmeli" time="13.057">
+<testsuite name="Cucumber" time="59.159" tests="7" skipped="0" failures="2" errors="0">
+<testcase classname="US1001 Kullanici testotomasyonu sayfasinda arama yapar" name="TC02 Kullanici shoes icin sonuc bulmali" time="5.641">
+<system-out><![CDATA[
+Given kullanici testotomasyonu anasayfaya gider.............................passed
+Then arama kutusuna shoes yazip ENTER tusuna basar..........................passed
+And arama sonucunda urun bulunabildigini test eder..........................passed
+And biraz bekler............................................................passed
+Then sayfayi kapatir........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1003 Kullanici bastaki ortak adimlari tek sefer yazabilmeli" name="TC06 Kullanici java arattiginda sonuc bulamamali" time="15.695">
+<system-out><![CDATA[
+Given kullanici "toUrl" anasayfaya gider....................................passed
+Then arama kutusuna "java" yazip ENTER tusuna basar.........................passed
+And arama sonucunda urun bulunamadigini test eder...........................passed
+And 3 saniye bekler.........................................................passed
+Then sayfayi kapatir........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1009 Kullanici coklu arama yapar" name=": TC15 Kullanici bir listedeki elementleri aratabilmeli - Example #1.1" time="4.325">
+<system-out><![CDATA[
+Given kullanici "toUrl" anasayfaya gider....................................passed
+Then arama kutusuna "phone" yazip ENTER tusuna basar........................passed
+And arama sonucunda urun bulunabildigini test eder..........................passed
+Then 1 saniye bekler........................................................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1009 Kullanici coklu arama yapar" name=": TC15 Kullanici bir listedeki elementleri aratabilmeli - Example #1.2" time="13.05">
+<failure type="java.lang.AssertionError">
+<![CDATA[java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.TestotomasyonuStepdefinitions.aramaSonucundaUrunBulunabildiginiTestEder(TestotomasyonuStepdefinitions.java:45)
+	at ✽.arama sonucunda urun bulunabildigini test eder(file:///Users/ahmetbulutluoz/Desktop/My%20Desktop/course/projeler/Team127_Cucumber/src/test/resources/features/US1009_CokluAramaTesti.feature:8)
+]]>
+</failure>
+<system-out><![CDATA[
+Given kullanici "toUrl" anasayfaya gider....................................passed
+Then arama kutusuna "java" yazip ENTER tusuna basar.........................passed
+And arama sonucunda urun bulunabildigini test eder..........................failed
+Then 1 saniye bekler........................................................skipped
+And sayfayi kapatir.........................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="US1009 Kullanici coklu arama yapar" name=": TC15 Kullanici bir listedeki elementleri aratabilmeli - Example #1.3" time="3.755">
+<system-out><![CDATA[
+Given kullanici "toUrl" anasayfaya gider....................................passed
+Then arama kutusuna "samsung" yazip ENTER tusuna basar......................passed
+And arama sonucunda urun bulunabildigini test eder..........................passed
+Then 1 saniye bekler........................................................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1009 Kullanici coklu arama yapar" name=": TC15 Kullanici bir listedeki elementleri aratabilmeli - Example #1.4" time="3.687">
+<system-out><![CDATA[
+Given kullanici "toUrl" anasayfaya gider....................................passed
+Then arama kutusuna "apple" yazip ENTER tusuna basar........................passed
+And arama sonucunda urun bulunabildigini test eder..........................passed
+Then 1 saniye bekler........................................................passed
+And sayfayi kapatir.........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="US1009 Kullanici coklu arama yapar" name=": TC15 Kullanici bir listedeki elementleri aratabilmeli - Example #1.5" time="12.897">
+<failure type="java.lang.AssertionError">
+<![CDATA[java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.TestotomasyonuStepdefinitions.aramaSonucundaUrunBulunabildiginiTestEder(TestotomasyonuStepdefinitions.java:45)
+	at ✽.arama sonucunda urun bulunabildigini test eder(file:///Users/ahmetbulutluoz/Desktop/My%20Desktop/course/projeler/Team127_Cucumber/src/test/resources/features/US1009_CokluAramaTesti.feature:8)
+]]>
+</failure>
 <system-out><![CDATA[
 Given kullanici "toUrl" anasayfaya gider....................................passed
 Then arama kutusuna "nutella" yazip ENTER tusuna basar......................passed
-And arama sonucunda urun bulunamadigini test eder...........................passed
-And sayfayi kapatir.........................................................passed
+And arama sonucunda urun bulunabildigini test eder..........................failed
+Then 1 saniye bekler........................................................skipped
+And sayfayi kapatir.........................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

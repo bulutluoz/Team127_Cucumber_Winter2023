@@ -1,6 +1,6 @@
 Feature: US1009 Kullanici coklu arama yapar
 
-
+  @Smoke
   Scenario Outline: : TC15 Kullanici bir listedeki elementleri aratabilmeli
 
     Given kullanici "toUrl" anasayfaya gider

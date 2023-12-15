@@ -1,5 +1,5 @@
 Feature: US1008 Kullanici sayfadaki butonlari test eder
-
+  @P1
   Scenario: TC14 Kullanici add ve delete butonlarinin calistigini test eder
 
     Given kullanici "heroUrl" anasayfaya gider
